@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scratcher - Angular</title>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="source/app.module.js"></script>
+    <script src="/node_modules/angular-aria/angular-aria.js"></script>
+    <script src="/node_modules/angular-animate/angular-animate.js"></script>
+    <script src="/node_modules/angular-messages/angular-messages.js"></script>
+    <script src="/node_modules/angular-material/angular-material.js"></script>
+
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+</head>
+<body>
+        <div ng-app="scratcherUI">
+            <div ng-controller="scratcherUIController" ng-cloak>
+                <md-content class="md-padding">
+                    <md-card class="md-padding">
+                        <h3>{{quizConfig.question}}</h3>
+
+                        <div ng-repeat="choice in quizConfig.answers">
+                            <md-button class="md-raised md-primary">{{choice.answer}}</md-button> <span>result: {{choice.route}}</span>
+                        </div>
+                    </md-card>
+
+                    <md-card class="md-padding">
+                        <pre>Current Data: {{currentData | json}}</pre>
+                    </md-card>
+
+                </md-content>
+            </div>
+        </div>
+</body>
+</html>
