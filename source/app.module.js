@@ -15,9 +15,9 @@ angular.module('scratcherUI')
     var quizConfig = {
         question: 'What is your favorite color?',
         answers: [
-            { answer: "Blue?", route: 'wrong'},
-            { answer: "Red?", route: 'correct'},
-            { answer: "Pink?", route: 'laugh'},
+            { answer: "Blue?", route: 'wrong', doAction: function() { console.log('user choose blue');}},
+            { answer: "Red?", route: 'correct', doAction: function() { console.log('user choose red');}},
+            { answer: "Pink?", route: 'laugh', doAction: function() { console.log('user choose pink');}},
         ]
     };
 
@@ -41,6 +41,4 @@ angular.module('scratcherUI')
             console.log('error:', error);
         })
     };
-
-    $scope.postData( server + endpoint, pageLoadData);
 });
